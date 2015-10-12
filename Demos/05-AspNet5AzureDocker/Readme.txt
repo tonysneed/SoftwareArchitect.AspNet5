@@ -16,11 +16,11 @@ to a Linux Virtual Machine with Docker on Azure
 2. Configure the docker command line interface
   - Get basic information from the remote VM, supplying correct host name and port number
 
-    docker --tls -H tcp://linux-docker.cloudapp.net:2376 info
+    docker --tls -H tcp://linux-docker1.westeurope.cloudapp.azure.com:2376 info
 
   - Set the docker_host environment variable:
 
-    set docker_host=tcp://linux-docker.cloudapp.net:2376
+    set docker_host=tcp://linux-docker1.westeurope.cloudapp.azure.com:2376
 
   - Requesting docker info again: `docker --tls info`
     
@@ -44,5 +44,5 @@ to a Linux Virtual Machine with Docker on Azure
 
     docker --tls ps
 
-  - Open a browser and go to: `http://linux-docker.cloudapp.net`
+  - Open a browser and go to: http://linux-docker1.westeurope.cloudapp.azure.com
 
