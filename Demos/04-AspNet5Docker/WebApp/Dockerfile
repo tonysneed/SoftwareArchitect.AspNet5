@@ -1,13 +1,9 @@
-FROM microsoft/aspnet:1.0.0-beta7-coreclr
+FROM microsoft/aspnet:1.0.0-beta7
 
-ENV RUNTIME_PACKAGES libunwind8, gettext, libssl-dev, libcurl3-dev, zlib1g
-
-COPY . /app
-
-WORKDIR /app
-
-RUN ["dnu", "restore"]
-
-EXPOSE 5004
-
+COPY project.json /app/ 
+WORKDIR /app 
+RUN ["dnu", "restore"] 
+COPY . /app 
+ 
+EXPOSE 5004 
 ENTRYPOINT ["dnx", "-p", "project.json", "kestrel"]
